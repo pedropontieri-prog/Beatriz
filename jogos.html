@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Catálogo - Jogos marcantes</title>
+
+<style>
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg,#0b3d2e,#1f7a54);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* CARD */
+.card {
+    width: 1000px;
+    max-width: 95%;
+    background: white;
+    border-radius: 16px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* AREA DO VIDEO - CORRIGIDA */
+.image-area {
+    width: 40%;
+    height: 620px; /* Altura fixa para manter proporção perfeita */
+    background: #eee;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-area iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    border: none;
+    object-fit: cover; /* Garante preenchimento perfeito */
+}
+
+/* LEGENDA */
+.caption {
+    padding: 15px;
+    font-size: 14px;
+    color: #444;
+    border-top: 1px solid #ddd;
+    flex-shrink: 0; /* Impede que a legenda encolha */
+}
+
+/* CONTEÚDO */
+.content {
+    width: 60%;
+    padding: 30px;
+    height: 620px; /* Mesma altura da área do vídeo */
+    overflow-y: auto; /* Scroll se necessário */
+    display: flex;
+    flex-direction: column;
+}
+
+.content h1 {
+    color: #0b3d2e;
+    margin-top: 0;
+}
+
+/* TITULOS */
+.section {
+    margin-top: 20px;
+}
+
+.section h2 {
+    color: #1f7a54;
+    margin-bottom: 10px;
+}
+
+/* LISTA */
+ul {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 6px;
+}
+
+/* DESTAQUE */
+.highlight {
+    background: #1f7a54;
+    color: white;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+    .card {
+        flex-direction: column;
+    }
+    .image-area, .content {
+        width: 100%;
+        height: 400px; /* Altura menor em mobile */
+    }
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="image-area">
+        <iframe 
+        src="https://rr2---sn-go2-ci1e.googlevideo.com/videoplayback?expire=1773444182&ei=9ke0aYHqCLOLr9gPg929wA4&ip=23.27.236.78&id=o-AKZV-Gg-DtIDbuVKz_cb-JhvU7R3-BuA_hVC577SKqXu&itag=18&source=youtube&requiressl=yes&xpc=EgVo2aDSNQ%3D%3D&rms=au%2Cau&bui=AVNa5-z4GAABOu_1zJgWaz7XNNW_agkJwdVNe8xS6iyonHgCZ1IFahjrL7v56CJCpurc2YeabFETZ96d&spc=6dlaFJEsj8D57H4IO7QgYWABrMTbsmc3KfZDpjABXIf5eSAL6vUBDxuI-2tpHCAc8vU&vprv=1&svpuc=1&mime=video%2Fmp4&rqh=1&cnr=14&ratebypass=yes&dur=890.229&lmt=1773390178880047&fexp=51565115,51565682,51791334&c=ANDROID&txp=5538534&sparams=expire%2Cei%2Cip%2Cid%2Citag%2Csource%2Crequiressl%2Cxpc%2Cbui%2Cspc%2Cvprv%2Csvpuc%2Cmime%2Crqh%2Ccnr%2Cratebypass%2Cdur%2Clmt&sig=AHEqNM4wRQIhAL7IHxwbkfMf73UJh-aj4l4w3-7aAkFrBVdVg5PbHFR7AiAz5tlowLQjTSqXVlZJvbT7ZgKTmj2oIExoHnHznbohjg%3D%3D&redirect_counter=1&rm=sn-p5qe7d76&rrc=104&req_id=dd4ba29bcb4a3ee&cms_redirect=yes&cmsv=e&cps=339&ipbypass=yes&met=1773422585,&mh=Fc&mip=200.133.203.42&mm=31&mn=sn-go2-ci1e&ms=au&mt=1773422018&mv=m&mvi=2&pl=24&lsparams=cps,ipbypass,met,mh,mip,mm,mn,ms,mv,mvi,pl,rms&lsig=APaTxxMwRgIhAK_XHrNj7M1BCsUcoutzLPazAm4Jl-RuOu_kst8D1hVBAiEA9PqTwmNmeyWYNcbXvpSi7yuU1LdqcPuKaVF2sjPuLTM%3D" 
+        title="TOP 10 - PALMEIRAS | GOLS HISTÓRICOS (2015‑2023)" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+        </iframe>
+        <div class="caption">
+            <h4>Momento marcante da história do Palmeiras em vídeo.</h4>
+        </div>
+    </div>
+
+    <div class="content">
+        <span class="highlight">Jogos Históricos</span>
+        <h1>Partidas Marcantes do Palmeiras</h1>
+
+        <div class="section">
+            <h2>🏆 Jogos que Valeram Títulos</h2>
+            <ul>
+                <li>Palmeiras 2 x 1 Deportivo Cali — Final da Libertadores 1999</li>
+                <li>Palmeiras 1 x 0 Santos — Final da Libertadores 2020</li>
+                <li>Palmeiras 2 x 1 Flamengo — Final da Libertadores 2021</li>
+                <li>Palmeiras 0 x 0 Santos (pênaltis) — Copa do Brasil 2015</li>
+                <li>Palmeiras 1 x 1 Grêmio — Copa do Brasil 2020</li>
+                <li>Palmeiras 4 x 3 Flamengo — Supercopa do Brasil 2023</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🔄 Viradas Históricas</h2>
+            <ul>
+                <li>Palmeiras 4 x 3 Botafogo — Brasileirão 2023</li>
+                <li>Palmeiras 3 x 2 Santos — Brasileirão 2019</li>
+                <li>Palmeiras 2 x 1 Peñarol — Libertadores 2017</li>
+                <li>Palmeiras 2 x 1 São Paulo — Campeonato Paulista 2022</li>
+                <li>Palmeiras 3 x 2 Corinthians — Brasileirão 1994</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>⚔️ Jogos de Superação</h2>
+            <ul>
+                <li>Palmeiras 3 x 0 River Plate — Libertadores 2020 (semifinal histórica)</li>
+                <li>Palmeiras 2 x 0 São Paulo — Libertadores 2021 (quartas)</li>
+                <li>Palmeiras 4 x 0 Corinthians — Final do Paulista 1993</li>
+                <li>Palmeiras 2 x 0 Vasco — Brasileirão 2016 (jogo do título)</li>
+                <li>Palmeiras 1 x 0 Botafogo — Brasileirão 2018 (decisivo para o título)</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>🟢 Clássicos Memoráveis</h2>
+            <ul>
+                <li>Palmeiras 4 x 0 Corinthians — Paulista 1993</li>
+                <li>Palmeiras 3 x 0 São Paulo — Libertadores 2020</li>
+                <li>Palmeiras 2 x 0 Corinthians — Brasileirão 2018</li>
+                <li>Palmeiras 1 x 0 Santos — Libertadores 2020</li>
+                <li>Palmeiras 3 x 1 São Paulo — Brasileirão 2023</li>
+            </ul>
+        </div>
+
+        <p>
+            <h4>
+            Ao longo de mais de um século de história, o Palmeiras protagonizou partidas inesquecíveis.
+            Jogos marcados por títulos, viradas emocionantes, momentos de superação e clássicos
+            históricos fazem parte da trajetória do clube. Cada uma dessas partidas representa
+            a força, a tradição e a paixão da torcida alviverde.
+            </h4>
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>
