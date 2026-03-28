@@ -13,17 +13,15 @@ body{
     color:white;
 }
 
-/* HEADER */
 header{
     text-align:center;
     padding:20px;
     background:#0b6623;
 }
 
-/* LISTA */
 .lista{
     padding:15px;
-    padding-bottom:120px; /* espaço pro player */
+    padding-bottom:120px;
 }
 
 /* ITEM */
@@ -44,7 +42,6 @@ header{
     transform:scale(1.02);
 }
 
-/* IMAGEM */
 .musica img{
     width:90px;
     height:90px;
@@ -52,12 +49,12 @@ header{
     border-radius:10px;
 }
 
-/* TEXTO */
+/* GARANTE QUE O TEXTO NÃO BLOQUEIE O CLIQUE */
 .musica span{
     font-size:16px;
+    pointer-events:none;
 }
 
-/* PLAYER */
 .player{
     position:fixed;
     bottom:0;
@@ -78,7 +75,7 @@ video{
 
 <header>
 <h1>🎶 Hinos & Cantos do Palmeiras</h1>
-<p>Toque para ouvir 👇</p>
+<p>Clique no nome para tocar 👇</p>
 </header>
 
 <div class="lista">
@@ -86,16 +83,6 @@ video{
 <div class="musica" onclick="tocar()">
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
 <span>Hino do Palmeiras</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Hino (Mancha Verde)</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Time da Virada</span>
 </div>
 
 <div class="musica" onclick="tocar()">
@@ -115,27 +102,7 @@ video{
 
 <div class="musica" onclick="tocar()">
 <img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Palmeiras Vai Jogar</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Sou Palmeiras</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
 <span>Palmeiras Fiu Fiu</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Rema Rema Remador</span>
-</div>
-
-<div class="musica" onclick="tocar()">
-<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Palmeiras_logo.svg">
-<span>Alegria Alegria</span>
 </div>
 
 <div class="musica" onclick="tocar()">
@@ -145,7 +112,6 @@ video{
 
 </div>
 
-<!-- PLAYER -->
 <div class="player">
 <video id="player" controls src="hino-palmeiras.mp4"></video>
 </div>
