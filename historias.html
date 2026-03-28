@@ -4,180 +4,205 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Catálogo - Títulos do Palmeiras</title>
+<title>Palmeiras - Títulos</title>
 
 <style>
-
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background: linear-gradient(135deg,#0b3d2e,#1f7a54);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    margin:0;
+:root{
+    --green:#0b6623;
+    --gold:#ffd700;
 }
 
-/* CARD */
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#0b3d2e,#1f7a54);
+}
 
-.card{
-    width:1000px;
+/* HEADER */
+header{
+    background:linear-gradient(90deg,#0b6623,#145a32);
+    color:white;
+    text-align:center;
+    padding:40px;
+    box-shadow:0 5px 20px rgba(0,0,0,.4);
+}
+
+header h1{
+    margin:0;
+    font-size:38px;
+}
+
+/* CONTAINER */
+.container{
+    max-width:1200px;
+    margin:40px auto;
     background:white;
-    border-radius:16px;
-    display:flex;
+    border-radius:20px;
     overflow:hidden;
-    box-shadow:0 15px 40px rgba(0,0,0,0.4);
+    box-shadow:0 25px 60px rgba(0,0,0,.5);
+    animation:fade .6s ease;
 }
 
 /* IMAGEM */
-
-.image-area{
-    width:40%;
-    background:#eee;
-    display:flex;
-    flex-direction:column;
+.hero{
+    position:relative;
 }
 
-.image-area img{
+.hero img{
     width:100%;
-    height:520px;
+    height:350px;
     object-fit:cover;
 }
 
-.caption{
-    padding:15px;
-    font-size:14px;
-    color:#444;
-    border-top:1px solid #ddd;
+.hero::after{
+    content:'';
+    position:absolute;
+    top:0;
+    width:100%;
+    height:100%;
+    background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);
 }
 
 /* CONTEÚDO */
-
 .content{
-    width:60%;
-    padding:30px;
+    padding:40px;
+    line-height:1.7;
 }
 
-.content h1{
-    color:#0b3d2e;
-    margin-top:0;
-}
-
-.content p{
-    line-height:1.6;
-    color:#333;
-}
-
-/* TITULOS */
-
-.section{
-    margin-top:20px;
-}
-
-.section h2{
+/* TÍTULOS */
+h2{
     color:#1f7a54;
+    margin-top:30px;
+    border-left:5px solid var(--green);
+    padding-left:10px;
+}
+
+/* TEXTO BONITO */
+.content p{
+    background:#f7f7f7;
+    padding:12px;
+    border-radius:8px;
     margin-bottom:10px;
+    transition:.3s;
 }
 
-ul{
-    padding-left:20px;
+.content p:hover{
+    background:#e6f4ec;
 }
 
-li{
-    margin-bottom:6px;
+/* LISTA DE TÍTULOS */
+.titles{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:10px;
+    margin-top:10px;
+}
+
+.title-item{
+    background:#f5f5f5;
+    padding:10px;
+    border-radius:8px;
+    transition:.3s;
+}
+
+.title-item:hover{
+    background:#e6f4ec;
+    transform:scale(1.03);
 }
 
 /* DESTAQUE */
-
 .highlight{
-    background:#1f7a54;
+    background:var(--green);
     color:white;
-    padding:8px 14px;
+    padding:8px 15px;
     border-radius:20px;
-    font-size:12px;
     display:inline-block;
-    margin-bottom:10px;
+    margin-bottom:15px;
 }
 
+/* BOTÃO */
+.back{
+    display:inline-block;
+    margin-top:30px;
+    padding:14px 25px;
+    background:var(--green);
+    color:white;
+    text-decoration:none;
+    border-radius:10px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.back:hover{
+    background:var(--gold);
+    color:black;
+}
+
+/* ANIMAÇÃO */
+@keyframes fade{
+from{opacity:0; transform:translateY(30px)}
+to{opacity:1; transform:translateY(0)}
+}
+
+/* RESPONSIVO */
+@media(max-width:800px){
+    .content{padding:20px}
+    header h1{font-size:26px}
+}
 </style>
 
 </head>
 
 <body>
 
-<div class="card">
+<header>
+<h1>Títulos do Palmeiras 🏆</h1>
+<p>História e conquistas do Verdão</p>
+</header>
 
-<div class="image-area">
+<div class="container">
 
-<a href="https://imgbb.com/"><img src="https://i.ibb.co/J9vj3Fw/images.jpg" alt="images" border="0"></a>
-
-<div class="caption">
-<h4>O Allianz Parque, casa do Palmeiras em São Paulo, palco de grandes conquistas e símbolo da força da torcida alviverde.</h4>
+<div class="hero">
+<img src="https://i.ibb.co/J9vj3Fw/images.jpg">
 </div>
-
-</div>
-
 
 <div class="content">
 
 <span class="highlight">Maior campeão do Brasil</span>
 
-<h1>Sociedade Esportiva Palmeiras</h1>
+<h2>História do Clube</h2>
 
+<p>A Sociedade Esportiva Palmeiras é um dos clubes mais tradicionais do futebol brasileiro. Sua história começa no início do século XX e está ligada à imigração italiana em São Paulo.</p>
 
-<div class="section">
+<p>O clube foi fundado em 26 de agosto de 1914 com o nome Palestra Italia. Ele foi criado por imigrantes italianos que viviam na cidade e queriam um time que representasse sua comunidade no esporte.</p>
 
-<h2>História do clube</h2>
+<p>Em 1942, durante a Segunda Guerra Mundial, o clube mudou seu nome para Palmeiras e protagonizou a histórica “Arrancada Heroica”.</p>
 
-<ul>
-A Sociedade Esportiva Palmeiras é um dos clubes mais tradicionais do futebol brasileiro. Sua história começa no início do século XX e está ligada à imigração italiana em São Paulo.
+<p>Nas décadas de 60 e 70, surgiu a famosa Academia de Futebol, com craques como Ademir da Guia e Dudu.</p>
 
-O clube foi fundado em 26 de agosto de 1914 com o nome Palestra Italia. Ele foi criado por imigrantes italianos que viviam na cidade e queriam um time que representasse sua comunidade no esporte. As cores originais do clube eram verde, branco e vermelho, inspiradas na bandeira da Itália.
+<p>Nos anos 90, com a Parmalat, o clube voltou ao topo com grandes jogadores como Edmundo e Roberto Carlos.</p>
 
-Em 1942, durante a Segunda Guerra Mundial, o governo brasileiro proibiu nomes ligados aos países do Eixo. Por isso, o clube precisou mudar de nome e passou a se chamar Palmeiras. Logo após a mudança, venceu o São Paulo Futebol Clube em um jogo histórico que ficou conhecido como “Arrancada Heroica”.
-
-Nas décadas de 1960 e 1970, o Palmeiras viveu uma das fases mais famosas de sua história, chamada Academia de Futebol, com jogadores importantes como Ademir da Guia, Dudu e Leivinha.
-
-Nos anos 1990, com o patrocínio da empresa Parmalat, o clube montou times muito fortes com jogadores como Edmundo, Roberto Carlos e Marcos.
-
-Em 2014, o Palmeiras inaugurou seu estádio moderno, o Allianz Parque. Nos últimos anos, o clube vive uma fase muito forte no futebol brasileiro e sul-americano, com destaque para o trabalho do técnico Abel Ferreira.
-</ul>
-
-</div>
-
-<div class="section">
+<p>Em 2014, inaugurou o Allianz Parque e iniciou uma nova era vitoriosa com títulos importantes.</p>
 
 <h2>Títulos Nacionais</h2>
 
-<ul>
-<li>Campeonato Brasileiro: 1960, 1967, 1967 (Taça Brasil), 1969, 1972, 1973, 1993, 1994, 2016, 2018, 2022, 2023</li>
-<li>Copa do Brasil: 1998, 2012, 2015, 2020</li>
-<li>Supercopa do Brasil: 2023</li>
-<li>Copa dos Campeões: 2000</li>
-</ul>
-
+<div class="titles">
+<div class="title-item">🏆 Brasileirão: 12 títulos</div>
+<div class="title-item">🏆 Copa do Brasil: 4 títulos</div>
+<div class="title-item">🏆 Supercopa: 1 título</div>
+<div class="title-item">🏆 Copa dos Campeões: 1 título</div>
 </div>
-
-<div class="section">
 
 <h2>Títulos Estaduais</h2>
 
-<ul>
-<li>Campeonato Paulista: 26 títulos</li>
-<li>Torneio Rio-São Paulo: 5 títulos</li>
-</ul>
-
+<div class="titles">
+<div class="title-item">🏆 Campeonato Paulista: 26 títulos</div>
+<div class="title-item">🏆 Rio-São Paulo: 5 títulos</div>
 </div>
 
-<p>
-<h4>Com uma história repleta de conquistas e ídolos, o Palmeiras continua
-escrevendo páginas gloriosas no futebol. Seu espírito vencedor, sua
-torcida apaixonada e sua tradição fazem do Verdão um dos clubes mais
-respeitados do planeta.</h4>
-</p>
-<a href="index.html" style="padding: 10px 20px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
-    Voltar para Início
-</a>
+<p><strong>Com uma história repleta de conquistas e ídolos, o Palmeiras continua escrevendo páginas gloriosas no futebol mundial.</strong></p>
+
+<a href="index.html" class="back">⬅ Voltar para início</a>
 
 </div>
 
