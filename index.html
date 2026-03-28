@@ -1,134 +1,261 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sociedade Esportiva Palmeiras - Fan Page</title>
-    <style>
-        /* Cores Oficiais */
-        :root {
-            --verde-palmeiras: #006437;
-            --branco: #ffffff;
-            --cinza-claro: #f4f4f4;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Palmeiras Ouro</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: var(--cinza-claro);
-            color: #333;
-        }
+<style>
+:root {
+    --green: #0b6623;
+    --gold: #ffd700;
+    --bg: #f4f6f5;
+    --text: #222;
+}
 
-        header {
-            background-color: var(--verde-palmeiras);
-            color: var(--branco);
-            padding: 2rem;
-            text-align: center;
-            border-bottom: 5px solid #004d2a;
-        }
+body.dark {
+    --bg: #121212;
+    --text: #eee;
+}
 
-        nav {
-            background: #004d2a;
-            padding: 10px;
-            text-align: center;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+body {
+    background: var(--bg);
+    color: var(--text);
+    transition: 0.3s;
+}
 
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background: white;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            border-radius: 8px;
-        }
+header {
+    background: linear-gradient(90deg, var(--green), #145a32);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
 
-        .hero {
-            text-align: center;
-            padding: 40px 0;
-        }
+header h1 {
+    font-size: 36px;
+    letter-spacing: 2px;
+}
 
-        .stats {
-            display: flex;
-            justify-content: space-around;
-            background: var(--verde-palmeiras);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-            margin-top: 20px;
-        }
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
 
-        .footer {
-            text-align: center;
-            padding: 20px;
-            font-size: 0.9rem;
-            color: #666;
-        }
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
 
-        h2 {
-            color: var(--verde-palmeiras);
-            border-bottom: 2px solid var(--verde-palmeiras);
-            padding-bottom: 5px;
-        }
-    </style>
+.filter-btn { background: white; color: var(--green); }
+.filter-btn:hover { background: var(--gold); transform: scale(1.1); }
+
+.toggle-dark { background: black; color: white; }
+
+.search {
+    margin: 25px auto;
+    display: block;
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.container { padding: 40px; }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    transition: 0.4s;
+    cursor: pointer;
+}
+
+body.dark .card { background: #1e1e1e; }
+
+.card:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+}
+
+.card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.card-content { padding: 20px; }
+
+.card h2 {
+    color: var(--green);
+}
+
+.badge {
+    margin-top: 10px;
+    background: var(--gold);
+    padding: 8px;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden { display: none; }
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    background: var(--green);
+    color: white;
+    margin-top: 40px;
+}
+</style>
 </head>
 <body>
 
 <header>
-    <h1>Sociedade Esportiva Palmeiras</h1>
-    <p>O Campeão do Século</p>
+<h1>Palmeiras Ouro Experience</h1>
+<nav>
+<button class="filter-btn" onclick="filtrar('all')">Tudo</button>
+<button class="filter-btn" onclick="filtrar('historia')">História</button>
+<button class="filter-btn" onclick="filtrar('titulos')">Títulos</button>
+<button class="filter-btn" onclick="filtrar('elenco')">Elenco</button>
+<button class="filter-btn" onclick="filtrar('camisa')">Camisas</button>
+<button class="filter-btn" onclick="filtrar('jogos')">Jogos</button>
+<button class="toggle-dark" onclick="darkMode()">🌙</button>
+<button onclick="login()">Login</button>
+</nav>
 </header>
 
-<nav>
-    <a href="historia.html">História</a>
-    <a href="titulo.html">Títulos</a>
-    <a href="elenco.html">Elenco</a>
-    <a href="Camisa.html">Camisas e Escudos</a>
-<a href="jogos.html">Jogos marcantes</a>
-</nav>
+<input class="search" placeholder="Pesquisar..." onkeyup="buscar(this.value)">
 
 <div class="container">
-    <section class="hero">
-        <h2>Sendo Palmeiras, o que importa é a raça!</h2>
-        <p>Fundado em 1914 como Palestra Italia, o Palmeiras é uma das instituições mais vitoriosas do futebol mundial.</p>
-    </section>
+<div class="grid">
 
-    <section>
-        <h2>Principais Conquistas</h2>
-        <ul>
-            <li>🏆 Tri-Campeão da Libertadores (1999, 2020, 2021)</li>
-            <li>🏆 Maior Campeão do Brasil (12 Títulos Brasileiros)</li>
-            <li>🏆 Copa do Brasil (4 Títulos)</li>
-            <li>🏆 Copa Rio 1951 (Campeão Mundial)</li>
-        </ul>
-    </section>
-
-    <div class="stats">
-        <div>
-            <h3>Libertadores</h3>
-            <p>3</p>
-        </div>
-        <div>
-            <h3>Brasileirões</h3>
-            <p>12</p>
-        </div>
-        <div>
-            <h3>Fundação</h3>
-            <p>1914</p>
-        </div>
-    </div>
+<div class="card historia" onclick="abrirModal('Fundado em 1914, um gigante do futebol brasileiro')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/1/10/Allianz_Parque.jpg">
+<div class="card-content"><h2>História</h2><div class="badge">Desde 1914</div></div>
 </div>
 
-<div class="footer">
-    <p>&copy; 2026 - Desenvolvido por um torcedor alviverde.</p>
+<div class="card titulos" onclick="abrirModal('Libertadores, Brasileirão e Copa do Brasil')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Copa_Libertadores.png">
+<div class="card-content"><h2>Títulos</h2><div class="badge">Gigante</div></div>
 </div>
+
+<div class="card camisa" onclick="abrirModal('Uniforme verde tradicional')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Palmeiras_jersey.jpg">
+<div class="card-content"><h2>Camisas</h2><div class="badge">Verde</div></div>
+</div>
+
+<div class="card elenco" onclick="abrirModal('Elenco atual competitivo')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Football_team.jpg">
+<div class="card-content"><h2>Elenco</h2><div class="badge">Atual</div></div>
+</div>
+
+<div class="card jogos" onclick="abrirModal('Final Libertadores 1999 histórica')">
+<img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Football_match.jpg">
+<div class="card-content"><h2>Jogos Marcantes</h2><div class="badge">Históricos</div></div>
+</div>
+
+</div>
+
+<h2 style="margin-top:40px">Estatísticas Dinâmicas</h2>
+<p id="stats">Jogos: 0 | Vitórias: 0 | Gols: 0</p>
+<button onclick="gerarStats()">Gerar</button>
+
+</div>
+
+<div class="modal" id="modal">
+<div class="modal-content">
+<p id="modal-text"></p>
+<button onclick="fecharModal()">Fechar</button>
+</div>
+</div>
+
+<footer>Projeto nível OURO</footer>
+
+<script>
+function filtrar(cat){
+ document.querySelectorAll('.card').forEach(c=>{
+  c.classList.toggle('hidden', cat!=='all' && !c.classList.contains(cat));
+ });
+}
+
+function buscar(txt){
+ txt = txt.toLowerCase();
+ document.querySelectorAll('.card').forEach(c=>{
+  c.style.display = c.innerText.toLowerCase().includes(txt) ? 'block':'none';
+ });
+}
+
+function darkMode(){ document.body.classList.toggle('dark'); }
+
+function abrirModal(texto){
+ document.getElementById('modal').style.display='flex';
+ document.getElementById('modal-text').innerText=texto;
+}
+
+function fecharModal(){ document.getElementById('modal').style.display='none'; }
+
+function gerarStats(){
+ let jogos = Math.floor(Math.random()*60);
+ let vitorias = Math.floor(Math.random()*jogos);
+ let gols = Math.floor(Math.random()*100);
+ document.getElementById('stats').innerText =
+ `Jogos: ${jogos} | Vitórias: ${vitorias} | Gols: ${gols}`;
+}
+
+function login(){
+ let nome = prompt('Digite seu nome:');
+ if(nome) alert('Bem-vindo, '+nome);
+}
+</script>
 
 </body>
 </html>
