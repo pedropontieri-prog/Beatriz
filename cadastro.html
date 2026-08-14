@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Cadastro - Palmeiras Experience</title>
+
+<style>
+
+body {
+
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #0b6623,
+        #145a32
+    );
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+}
+
+
+.container {
+
+    background: #fff;
+
+    padding: 30px;
+
+    border-radius: 15px;
+
+    width: 340px;
+
+    box-shadow:
+        0 10px 25px rgba(0,0,0,0.2);
+
+}
+
+
+h1 {
+
+    text-align: center;
+
+    color: #0b6623;
+
+    margin-bottom: 5px;
+
+}
+
+
+h2 {
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    color: #333;
+
+}
+
+
+.input-group {
+
+    margin-bottom: 15px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #555;
+
+    font-weight: bold;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    border: 1px solid #ccc;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+}
+
+
+button {
+
+    width: 100%;
+
+    padding: 12px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #0b6623;
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+
+}
+
+
+button:hover {
+
+    background: #084d1b;
+
+}
+
+
+.botao-fundo {
+
+    background: #222;
+
+}
+
+
+.botao-apagar {
+
+    background: #b00020;
+
+}
+
+
+.botao-apagar:hover {
+
+    background: #8b0019;
+
+}
+
+
+.botao-voltar {
+
+    background: #555;
+
+}
+
+
+.botao-voltar:hover {
+
+    background: #333;
+
+}
+
+
+#resultado {
+
+    margin-top: 20px;
+
+}
+
+
+footer {
+
+    text-align: center;
+
+    padding: 25px;
+
+    background: #0b6623;
+
+    color: white;
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<h1>
+Palmeiras
+</h1>
+
+
+<h2>
+Cadastro do Atleta
+</h2>
+
+
+<form id="meuFormulario">
+
+
+<div class="input-group">
+
+<label>
+Nome do Atleta
+</label>
+
+<input
+    type="text"
+    name="nome"
+    required
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+URL da Imagem do Atleta
+</label>
+
+<input
+    type="url"
+    name="imagem"
+    required
+>
+
+</div>
+
+
+<div class="input-group">
+
+<label>
+Descrição do Atleta
+</label>
+
+<textarea
+    name="descricao"
+    rows="4"
+></textarea>
+
+</div>
+
+
+<button type="submit">
+
+Cadastrar Atleta
+
+</button>
+
+
+</form>
+
+
+<button
+    type="button"
+    class="botao-fundo"
+    onclick="alterarFundo()"
+>
+
+Mudar fundo
+
+</button>
+
+
+<button
+    type="button"
+    class="botao-apagar"
+    onclick="apagarTudo()"
+>
+
+Apagar tudo
+
+</button>
+
+
+<button
+    type="button"
+    class="botao-voltar"
+    onclick="window.location.href='index.html'"
+>
+
+Voltar
+
+</button>
+
+
+<div id="resultado"></div>
+
+
+</div>
+
+
+<script src="palmeiras.js"></script>
+
+
+</body>
+
+</html>
