@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Palmeiras Ouro</title>
 
 <style>
+
 :root {
     --green: #0b6623;
     --gold: #ffd700;
@@ -54,8 +58,20 @@ button {
     font-weight: bold;
 }
 
-.filter-btn { background: white; color: var(--green); }
-.toggle-dark { background: black; color: white; }
+.filter-btn {
+    background: white;
+    color: var(--green);
+}
+
+.toggle-dark {
+    background: black;
+    color: white;
+}
+
+.cadastro-btn {
+    background: var(--gold);
+    color: #222;
+}
 
 .search {
     margin: 25px auto;
@@ -66,7 +82,9 @@ button {
     border: 1px solid #ccc;
 }
 
-.container { padding: 40px; }
+.container {
+    padding: 40px;
+}
 
 .grid {
     display: grid;
@@ -83,7 +101,9 @@ button {
     cursor: pointer;
 }
 
-body.dark .card { background: #1e1e1e; }
+body.dark .card {
+    background: #1e1e1e;
+}
 
 .card:hover {
     transform: translateY(-10px) scale(1.05);
@@ -95,9 +115,13 @@ body.dark .card { background: #1e1e1e; }
     object-fit: cover;
 }
 
-.card-content { padding: 20px; }
+.card-content {
+    padding: 20px;
+}
 
-.card h2 { color: var(--green); }
+.card h2 {
+    color: var(--green);
+}
 
 .badge {
     margin-top: 10px;
@@ -108,7 +132,9 @@ body.dark .card { background: #1e1e1e; }
     font-weight: bold;
 }
 
-.hidden { display: none; }
+.hidden {
+    display: none;
+}
 
 footer {
     text-align: center;
@@ -117,131 +143,293 @@ footer {
     color: white;
     margin-top: 40px;
 }
+
 </style>
+
 </head>
+
 <body>
 
 <header>
+
 <h1>Palmeiras Experience</h1>
+
 <nav>
-<button class="filter-btn" onclick="filtrar('all')">Tudo</button>
-<button class="filter-btn" onclick="filtrar('historia')">História</button>
-<button class="filter-btn" onclick="filtrar('titulos')">Títulos</button>
-<button class="filter-btn" onclick="filtrar('elenco')">Elenco</button>
-<button class="filter-btn" onclick="filtrar('camisa')">Camisas</button>
-<button class="filter-btn" onclick="filtrar('jogos')">Jogos</button>
-<button class="filter-btn" onclick="filtrar('hino')">Hino e Canções do Verdão</button>
-<button class="toggle-dark" onclick="darkMode()">🌙</button>
-<button onclick="login()">Login</button>
+
+<button class="filter-btn" onclick="filtrar('all')">
+Tudo
+</button>
+
+<button class="filter-btn" onclick="filtrar('historia')">
+História
+</button>
+
+<button class="filter-btn" onclick="filtrar('titulos')">
+Títulos
+</button>
+
+<button class="filter-btn" onclick="filtrar('elenco')">
+Elenco
+</button>
+
+<button class="filter-btn" onclick="filtrar('camisa')">
+Camisas
+</button>
+
+<button class="filter-btn" onclick="filtrar('jogos')">
+Jogos
+</button>
+
+<button class="filter-btn" onclick="filtrar('hino')">
+Hino e Canções do Verdão
+</button>
+
+<button class="toggle-dark" onclick="darkMode()">
+🌙
+</button>
+
+<button onclick="login()">
+Login
+</button>
+
+<a href="cadastro.html">
+<button class="cadastro-btn">
+Cadastro
+</button>
+</a>
+
 </nav>
+
 </header>
 
-<input class="search" placeholder="Pesquisar..." onkeyup="buscar(this.value)">
+<input
+    class="search"
+    placeholder="Pesquisar..."
+    onkeyup="buscar(this.value)"
+>
 
 <div class="container">
 
 <div class="grid">
 
 <a href="historias.html" style="text-decoration:none; color:inherit;">
-  <div class="card historia">
-    <img src="history.png">
-    <div class="card-content">
-      <h2>História</h2>
-      <div class="badge">Desde 1914</div>
-    </div>
-  </div>
+
+<div class="card historia">
+
+<img src="history.png">
+
+<div class="card-content">
+
+<h2>História</h2>
+
+<div class="badge">
+Desde 1914
+</div>
+
+</div>
+
+</div>
+
 </a>
+
 
 <a href="titulos.html" style="text-decoration:none; color:inherit;">
-  <div class="card titulos">
-    <img src="maio.png">
-    <div class="card-content">
-      <h2>Títulos</h2>
-      <div class="badge">Gigante</div>
-    </div>
-  </div>
+
+<div class="card titulos">
+
+<img src="maio.png">
+
+<div class="card-content">
+
+<h2>Títulos</h2>
+
+<div class="badge">
+Gigante
+</div>
+
+</div>
+
+</div>
+
 </a>
+
 
 <a href="camisa.html" style="text-decoration:none; color:inherit;">
-  <div class="card camisa">
-    <img src="usar.png">
-    <div class="card-content">
-      <h2>Camisas e Escudos</h2>
-      <div class="badge">Verde</div>
-    </div>
-  </div>
+
+<div class="card camisa">
+
+<img src="usar.png">
+
+<div class="card-content">
+
+<h2>Camisas e Escudos</h2>
+
+<div class="badge">
+Verde
+</div>
+
+</div>
+
+</div>
+
 </a>
+
 
 <a href="elenco.html" style="text-decoration:none; color:inherit;">
-  <div class="card elenco">
-    <img src="imagem.png">
-    <div class="card-content">
-      <h2>Elenco</h2>
-      <div class="badge">Todos os tempos</div>
-    </div>
-  </div>
+
+<div class="card elenco">
+
+<img src="imagem.png">
+
+<div class="card-content">
+
+<h2>Elenco</h2>
+
+<div class="badge">
+Todos os tempos
+</div>
+
+</div>
+
+</div>
+
 </a>
+
 
 <a href="jogos.html" style="text-decoration:none; color:inherit;">
-  <div class="card jogos">
-    <img src="luiz.png">
-    <div class="card-content">
-      <h2>Jogos Marcantes</h2>
-      <div class="badge">Histórico</div>
-    </div>
-  </div>
+
+<div class="card jogos">
+
+<img src="luiz.png">
+
+<div class="card-content">
+
+<h2>Jogos Marcantes</h2>
+
+<div class="badge">
+Histórico
+</div>
+
+</div>
+
+</div>
+
 </a>
+
 
 <a href="hino.html" style="text-decoration:none; color:inherit;">
-  <div class="card hino">
-   <img src="palmeiras.png">
-    <div class="card-content">
-      <h2>Hinos e Canções</h2>
-      <div class="badge"> Belas Músicas</div>
-    </div>
-  </div>
+
+<div class="card hino">
+
+<img src="palmeiras.png">
+
+<div class="card-content">
+
+<h2>Hinos e Canções</h2>
+
+<div class="badge">
+Belas Músicas
+</div>
+
+</div>
+
+</div>
+
 </a>
-</div>
-
-<h2 style="margin-top:40px">Estatísticas Dinâmicas</h2>
-<p id="stats">Jogos: 0 | Vitórias: 0 | Gols: 0</p>
-<button onclick="gerarStats()">Gerar</button>
 
 </div>
 
-<footer>Sociedade Esportiva Palmeiras</footer>
+
+<h2 style="margin-top:40px">
+Estatísticas Dinâmicas
+</h2>
+
+<p id="stats">
+Jogos: 0 | Vitórias: 0 | Gols: 0
+</p>
+
+<button onclick="gerarStats()">
+Gerar
+</button>
+
+</div>
+
+<footer>
+Sociedade Esportiva Palmeiras
+</footer>
+
 
 <script>
-function filtrar(cat){
- document.querySelectorAll('.card').forEach(c=>{
-  c.classList.toggle('hidden', cat!=='all' && !c.classList.contains(cat));
- });
+
+function filtrar(cat) {
+
+    document.querySelectorAll('.card').forEach(c => {
+
+        c.classList.toggle(
+            'hidden',
+            cat !== 'all' && !c.classList.contains(cat)
+        );
+
+    });
+
 }
 
-function buscar(txt){
- txt = txt.toLowerCase();
- document.querySelectorAll('.card').forEach(c=>{
-  c.style.display = c.innerText.toLowerCase().includes(txt) ? '' : 'none';
- });
+
+function buscar(txt) {
+
+    txt = txt.toLowerCase();
+
+    document.querySelectorAll('.card').forEach(c => {
+
+        c.style.display =
+            c.innerText.toLowerCase().includes(txt)
+            ? ''
+            : 'none';
+
+    });
+
 }
 
-function darkMode(){
- document.body.classList.toggle('dark');
+
+function darkMode() {
+
+    document.body.classList.toggle('dark');
+
 }
 
-function gerarStats(){
- let jogos = Math.floor(Math.random()*60);
- let vitorias = Math.floor(Math.random()*jogos);
- let gols = Math.floor(Math.random()*100);
- document.getElementById('stats').innerText =
- `Jogos: ${jogos} | Vitórias: ${vitorias} | Gols: ${gols}`;
+
+function gerarStats() {
+
+    let jogos = Math.floor(Math.random() * 60);
+
+    let vitorias = Math.floor(
+        Math.random() * jogos
+    );
+
+    let gols = Math.floor(
+        Math.random() * 100
+    );
+
+    document.getElementById('stats').innerText =
+        `Jogos: ${jogos} | Vitórias: ${vitorias} | Gols: ${gols}`;
+
 }
 
-function login(){
- let nome = prompt('Digite seu nome:');
- if(nome) alert('Bem-vindo, '+nome);
+
+function login() {
+
+    let nome = prompt('Digite seu nome:');
+
+    if (nome) {
+
+        alert('Bem-vindo, ' + nome);
+
+    }
+
 }
+
 </script>
 
 </body>
+
 </html>
