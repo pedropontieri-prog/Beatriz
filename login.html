@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | Palmeiras Experience</title>
+
+    <style>
+        :root {
+            --green: #0b6623;
+            --green-dark: #064519;
+            --gold: #ffd700;
+            --bg: #f4f6f5;
+            --text: #222;
+            --white: #fff;
+            --error: #d93025;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background:
+                linear-gradient(
+                    rgba(11, 102, 35, 0.92),
+                    rgba(6, 69, 25, 0.95)
+                ),
+                url("palmeiras.png") center/cover no-repeat;
+            padding: 20px;
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 430px;
+            background: var(--white);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 15px 45px rgba(0, 0, 0, 0.35);
+            animation: aparecer 0.5s ease;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            width: 85px;
+            height: 85px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: var(--green);
+            border: 4px solid var(--gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--gold);
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--green);
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #777;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text);
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            font-size: 15px;
+            outline: none;
+            transition: 0.3s;
+        }
+
+        input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(11, 102, 35, 0.12);
+        }
+
+        .senha-box {
+            position: relative;
+        }
+
+        .senha-box input {
+            padding-right: 50px;
+        }
+
+        .mostrar-senha {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            padding: 5px;
+        }
+
+        .opcoes {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 5px 0 25px;
+            font-size: 13px;
+        }
+
+        .lembrar {
+            display: flex;
+            align-items: center;
+            gap: 7px;
+        }
+
+        .lembrar input {
+            width: auto;
+        }
+
+        .esqueci {
+            color: var(--green);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .esqueci:hover {
+            text-decoration: underline;
+        }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(
+                90deg,
+                var(--green),
+                #12802d
+            );
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-login:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(11, 102, 35, 0.3);
+        }
+
+        .mensagem {
+            display: none;
+            margin-bottom: 20px;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .mensagem.erro {
+            display: block;
+            background: #ffe8e6;
+            color: var(--error);
+        }
+
+        .cadastro {
+            text-align: center;
+            margin-top: 25px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        .cadastro a {
+            color: var(--green);
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .cadastro a:hover {
+            text-decoration: underline;
+        }
+
+        .voltar {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #666;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .voltar:hover {
+            color: var(--green);
+        }
+
+        @media (max-width: 480px) {
+            .login-container {
+                padding: 30px 22px;
+            }
+
+            .opcoes {
+                flex-direction: column;
+                gap: 12px;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="logo">
+            P
+        </div>
+
+        <h1>Palmeiras Experience</h1>
+
+        <p class="subtitle">
+            Entre na sua conta para continuar
+        </p>
+
+        <div id="mensagem" class="mensagem"></div>
+
+        <form id="loginForm">
+
+            <div class="input-group">
+                <label for="email">E-mail</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Digite seu e-mail"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="input-group">
+
+                <label for="senha">Senha</label>
+
+                <div class="senha-box">
+
+                    <input
+                        type="password"
+                        id="senha"
+                        placeholder="Digite sua senha"
+                        autocomplete="current-password"
+                        minlength="6"
+                        required
+                    >
+
+                    <button
+                        type="button"
+                        class="mostrar-senha"
+                        onclick="mostrarSenha()"
+                        aria-label="Mostrar senha"
+                    >
+                        👁️
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="opcoes">
+
+                <label class="lembrar">
+                    <input type="checkbox" id="lembrar">
+                    Lembrar de mim
+                </label>
+
+                <a href="#" class="esqueci" onclick="esqueciSenha(event)">
+                    Esqueci minha senha
+                </a>
+
+            </div>
+
+            <button type="submit" class="btn-login">
+                Entrar
+            </button>
+
+        </form>
+
+        <div class="cadastro">
+            Ainda não possui uma conta?
+            <a href="cadastro.html">Criar conta</a>
+        </div>
+
+        <a href="index.html" class="voltar">
+            ← Voltar para o início
+        </a>
+
+    </div>
+
+
+    <script>
+
+        const form = document.getElementById("loginForm");
+        const mensagem = document.getElementById("mensagem");
+
+        form.addEventListener("submit", function(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+            const senha = document.getElementById("senha").value;
+
+            mensagem.className = "mensagem";
+            mensagem.innerText = "";
+
+            if (!email || !senha) {
+                mostrarErro("Preencha todos os campos.");
+                return;
+            }
+
+            if (!email.includes("@")) {
+                mostrarErro("Digite um e-mail válido.");
+                return;
+            }
+
+            if (senha.length < 6) {
+                mostrarErro("A senha deve ter pelo menos 6 caracteres.");
+                return;
+            }
+
+            /*
+                DEMONSTRAÇÃO
+
+                Aqui futuramente entrará a comunicação
+                com seu servidor/banco de dados.
+            */
+
+            alert("Login realizado com sucesso!");
+
+            window.location.href = "index.html";
+        });
+
+
+        function mostrarSenha() {
+
+            const senha = document.getElementById("senha");
+            const botao = document.querySelector(".mostrar-senha");
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+                botao.innerText = "🙈";
+
+            } else {
+
+                senha.type = "password";
+                botao.innerText = "👁️";
+
+            }
+        }
+
+
+        function mostrarErro(texto) {
+
+            mensagem.innerText = texto;
+            mensagem.className = "mensagem erro";
+
+        }
+
+
+        function esqueciSenha(event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("email").value.trim();
+
+            if (!email) {
+
+                mostrarErro(
+                    "Digite seu e-mail para recuperar a senha."
+                );
+
+                return;
+            }
+
+            alert(
+                "Em um sistema real, um link de recuperação seria enviado para: "
+                + email
+            );
+        }
+
+    </script>
+
+</body>
+</html>
