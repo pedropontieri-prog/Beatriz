@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="pt-BR">
 
 <head>
@@ -144,6 +145,27 @@ footer {
     margin-top: 40px;
 }
 
+#resultado-fetch {
+    margin-top: 40px;
+    padding: 25px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+body.dark #resultado-fetch {
+    background: #1e1e1e;
+}
+
+#resultado-fetch h2 {
+    color: var(--green);
+    margin-bottom: 15px;
+}
+
+#resultado-fetch p {
+    margin: 8px 0;
+}
+
 </style>
 
 </head>
@@ -194,7 +216,6 @@ Hino e Canções do Verdão
     </button>
 </a>
 
-
 <a href="cadastro.html">
 <button class="cadastro-btn">
 Cadastro
@@ -206,9 +227,10 @@ Cadastro
 </header>
 
 <input
-    class="search"
-    placeholder="Pesquisar..."
-    onkeyup="buscar(this.value)"
+class="search"
+placeholder="Pesquisar..."
+onkeyup="buscar(this.value)"
+
 >
 
 <div class="container">
@@ -235,7 +257,6 @@ Desde 1914
 
 </a>
 
-
 <a href="titulos.html" style="text-decoration:none; color:inherit;">
 
 <div class="card titulos">
@@ -255,7 +276,6 @@ Gigante
 </div>
 
 </a>
-
 
 <a href="camisa.html" style="text-decoration:none; color:inherit;">
 
@@ -277,7 +297,6 @@ Verde
 
 </a>
 
-
 <a href="elenco.html" style="text-decoration:none; color:inherit;">
 
 <div class="card elenco">
@@ -298,7 +317,6 @@ Todos os tempos
 
 </a>
 
-
 <a href="jogos.html" style="text-decoration:none; color:inherit;">
 
 <div class="card jogos">
@@ -318,7 +336,6 @@ Histórico
 </div>
 
 </a>
-
 
 <a href="hino.html" style="text-decoration:none; color:inherit;">
 
@@ -342,7 +359,6 @@ Belas Músicas
 
 </div>
 
-
 <h2 style="margin-top:40px">
 Estatísticas Dinâmicas
 </h2>
@@ -355,12 +371,19 @@ Jogos: 0 | Vitórias: 0 | Gols: 0
 Gerar
 </button>
 
+<div id="resultado-fetch">
+
+<h2>Resultado do fetch()</h2>
+
+<p>Carregando resultado...</p>
+
+</div>
+
 </div>
 
 <footer>
 Sociedade Esportiva Palmeiras
 </footer>
-
 
 <script>
 
@@ -377,7 +400,6 @@ function filtrar(cat) {
 
 }
 
-
 function buscar(txt) {
 
     txt = txt.toLowerCase();
@@ -393,13 +415,11 @@ function buscar(txt) {
 
 }
 
-
 function darkMode() {
 
     document.body.classList.toggle('dark');
 
 }
-
 
 function gerarStats() {
 
@@ -418,7 +438,6 @@ function gerarStats() {
 
 }
 
-
 function login() {
 
     let nome = prompt('Digite seu nome:');
@@ -432,6 +451,8 @@ function login() {
 }
 
 </script>
+
+<script src="index.js"></script>
 
 </body>
 
